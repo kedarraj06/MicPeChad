@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: micpechad-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app/generated_audio:/app/app/generated_audio
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - CORS_ORIGINS=http://localhost:5173,http://localhost:3000
+      - GENERATED_AUDIO_DIR=app/generated_audio
+      - MAX_TEXT_LENGTH=500
+      - AUDIO_CLEANUP_INTERVAL_MINUTES=15
+      - AUDIO_RETENTION_HOURS=1
+    restart: unless-stopped

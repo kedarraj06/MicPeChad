@@ -1,0 +1,10 @@
+fastapi>=0.100.0
+uvicorn>=0.22.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+python-dotenv>=1.0.0
+python-multipart>=0.0.6
+pyttsx3>=2.90
+edge-tts>=6.1.8
+pydub>=0.25.1
+# TTS>=0.22.0 # Uncomment and install if you have native C++ compilation tools
