@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Instantiate standard axios client pointing to FastAPI
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
+  baseURL: import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000/api' : '/api'),
   headers: {
     'Content-Type': 'application/json',
   },
